@@ -1,0 +1,30 @@
+@mixin clearfix {
+    &:before,
+    &:after {
+        content: " ";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+@mixin container($value) {
+    max-width: calc(#{$value} + 4rem);
+    padding-inline: 2rem;
+    margin-inline: auto;
+    width: 100%;
+}
+
+@mixin box-sizing($value) {
+    -webkit-box-sizing: $value;
+    -moz-box-sizing: $value;
+    box-sizing: $value;
+}
+
+@function em($size, $context: 16) {
+    @return ($size / $context) * 1em;
+}
+@function rem($size, $context: 16) {
+    @return ($size / $context) * 1rem;
+}
